@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AnChat</title>
+</head>
+<body>
+  <button id="world-id-login">Login with World ID</button>
+
+  <script>
+    const APP_ID = "app_c8d20ad0d7cda180068cb4e5304b2420"
+    const ACTION = "login"
+
+    const REDIRECT_URI = window.location.href;
+
+    const loginUrl =
+      "https://worldcoin.org/verify" +
+      "?app_id=" + encodeURIComponent(APP_ID) +
+      "&action=" + encodeURIComponent(ACTION) +
+      "&redirect_uri=" + encodeURIComponent(REDIRECT_URI)
+
+    document.getElementById("world-id-login").addEventListener("click", () => {
+      window.location.href = loginUrl
+    })
+  </script>
+</body>
+</html>
+
